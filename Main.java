@@ -1,6 +1,6 @@
 import javax.swing.JFrame;
 
-import View.GameScreen;
+import View.MenuScreen;
 import javax.swing.JFrame;
 
 public class Main {
@@ -10,7 +10,7 @@ public class Main {
 
         JFrame window = new JFrame();
 
-        var menu = new GameScreen(window);
+        var menu = new MenuScreen(window);
         menu.init();
 
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

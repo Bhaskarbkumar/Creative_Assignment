@@ -8,23 +8,34 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.JPanel;
 
+import View.RealGameScreen;
+import model.SnakeGame;
+
 
 public class GameKeyListener  implements ActionListener{
 
-    public GameKeyListener() {
+    
+    private RealGameScreen screen;
 
-    }
+    public GameKeyListener(RealGameScreen screen) {
+         this.screen=screen;
+     }
+  
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        
+        SnakeGame snake = new SnakeGame();
+        if(snake.running) {
+               snake.move();
+           }
+           screen.getCanvas().repaint();
+             
     }
-
     public class  MykeyAdapter extends KeyAdapter {
         @Override
         public void keyPressed(KeyEvent e){
 
         }
     }
+  
 }
