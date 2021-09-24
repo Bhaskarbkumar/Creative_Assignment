@@ -28,6 +28,6 @@ public void paintComponent(Graphics g) {
 
            g2.setColor(Color.BLUE);
            g2.setFont(new Font("Courier", Font.ITALIC,30));
-           g2.drawString("Press <NEW> to Start",100,150);
+           g2.drawString("Snake Game",100,150);
 }
 }

@@ -2,6 +2,10 @@ package model;
 
 import java.util.Random;
 import java.util.Timer;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.Random;
 
 import View.GameScreenCanvas;
 
@@ -10,24 +14,23 @@ public class SnakeGame {
     public int width=600;
     public int height =600;
     public int unit_size=50;
-    public int game_units=width*height/unit_size;
+    public int game_units=width*height/unit_size*unit_size;
     int delay=65;
 
     int x[] = new int[game_units];
     int y[] = new int[game_units];
     public int parts=6;
-    int mangoesEaten;
+    public int mangoesEaten;
     public int mangoeX;
     public int mangoeY;
-    char direction ='R';
-    public boolean running = true;
-    Timer timer;
+    public char direction ='R';
+    public boolean running = false;
+    Timer timer ;
     Random random = new Random();
 
-    public void startGame() {
-          newMangoe();
-          running=true;    
-    }
+
+ 
+    
     
     public void move() {
         for(int i = parts;i>0;i--){
@@ -59,6 +62,11 @@ public class SnakeGame {
     }
 
     public void checkMangoes(){
+        if((x[0] == mangoeX) && (y[0] == mangoeY)) {
+			parts++;
+			mangoesEaten++;
+		  newMangoe();
+        }
 
     }
 
