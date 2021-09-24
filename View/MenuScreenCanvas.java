@@ -27,7 +27,7 @@ public void paintComponent(Graphics g) {
        Graphics2D g2 = (Graphics2D) g;
 
            g2.setColor(Color.BLUE);
-           g2.setFont(new Font("Courier", Font.ITALIC,30));
+           g2.setFont(new Font("Courier", Font.ITALIC,80));
            g2.drawString("Snake Game",100,150);
 }
 }
